@@ -16,6 +16,7 @@ progress_store = {}
 async def get_progress():
     return "DevGrid Test API"
 
+
 @app.post("/weather/")
 async def collect_weather_data(request: WeatherRequest):
     print("chegou")
@@ -28,22 +29,19 @@ async def collect_weather_data(request: WeatherRequest):
     counter_limit = 0
     for city_id in CITY_IDS:
         data = await fetch_weather_data(int(city_id))
-        print(data)
-        weather_store[user_id].append({
-            "timestamp": datetime.now().isoformat(),
-            "data": data
-        })
+        weather_store[user_id].append(
+            {"timestamp": datetime.now().isoformat(), "data": data}
+        )
         progress_store[user_id] += 1
-        counter_limit+=1
-        print(counter_limit)
+        counter_limit += 1
         if counter_limit == 60:
             await asyncio.sleep(1)
 
     return {"message": "Data collection complete"}
 
+
 @app.get("/weather/progress")
 async def get_progress(user_id: str):
-    print("chegou", user_id)
     if user_id not in progress_store:
         raise HTTPException(status_code=404, detail="User ID not found")
 
