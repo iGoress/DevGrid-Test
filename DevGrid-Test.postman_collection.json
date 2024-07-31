@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "a771bf2b-bdd8-4399-b6a2-455e7198af6c",
+		"name": "DevGrid-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10851921",
+		"_collection_link": "https://wecare-br.postman.co/workspace/FlipKick~70264e66-4ae3-4495-b501-44b51f9ef508/collection/10851921-a771bf2b-bdd8-4399-b6a2-455e7198af6c?action=share&source=collection_link&creator=10851921"
+	},
+	"item": [
+		{
+			"name": "Wheater Progress",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Wheater",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/weather/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"weather",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
